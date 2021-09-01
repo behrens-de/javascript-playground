@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>CSS Control with Javascript</title>
+    <meta name="description" content="" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="./img/icons/favicon-96x96.png"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./base.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <div id="page">
+      <header>
+        <div class="logo">// JB</div>
+        <div class="headline">Playground: Bildfilter Javascript</div>
+        <div class="info"></div>
+      </header>
+
+      <div class="wrap">
+
+        <h1>Bilder mit CSS & <div class="h1">JavaScript</div> verändern</h1>
+
+<div class="area">
+  <div class="controls">
+    <h2>
+      Control Panel
+    </h2>
+    <label for="spacing">Rahmen:</label>
+    <input type="range" name="spacing" min="0" max="25" value="0" data-sizing="px">
+
+    <label for="base">Farbe:</label>
+    <input type="color" name="base" value="#ffcc00">
+
+    <hr>
+
+    <label for="blur">Unschärfe:</label>
+    <input type="range" name="blur" min="0" max="25" value="0" data-sizing="px"> 
+
+    <label for="grayscale">Schwarz/Weiß:</label>
+    <input type="range" name="grayscale" min="0" max="100" value="0" data-sizing="%" > 
+        
+    <label for="sepia">Spia:</label>
+    <input type="range" name="sepia" min="0" max="100" value="0" data-sizing="%" > 
+        
+    <label for="sepia">invert:</label>
+    <input type="range" name="invert" min="0" max="100" value="0" data-sizing="%" > 
+        
+    
+    <button class="newImg">Neues Bild</button>
+    
+    
+
+  </div>
+  <div class="output">Bitte Warten</div>
+</div>
+
+
+        <!-- <h1>Update CSS Variables with <div class="h1">JS</div></h1>
+
+        <div class="controls">
+          <label for="spacing">Abstand:</label>
+          <input type="range" name="spacing" min="0" max="25" value="10" data-sizing="px">
+
+          <label for="blur">Verwischen:</label>
+          <input type="range" name="blur" min="0" max="25" value="10" data-sizing="px"> 
+          
+          <label for="base">Farbe:</label>
+          <input type="color" name="base" value="#ffcc00">
+          
+        </div>
+
+        <img class="img1" src="https://images.unsplash.com/photo-1422393462206-207b0fbd8d6b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80"> -->
+
+      </div>
+    </div>
+
+    <script src="./main.js" async defer></script>
+  </body>
+</html>

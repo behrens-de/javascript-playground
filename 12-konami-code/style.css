@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Klee+One&display=swap');
+
+
+:root {
+  --main-color: orange;
+  --accentColor: #ffcc00;
+  --firstHeight: calc(calc(100vh - 46px))
+}
+
+.wrap {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-height: var(--firstHeight);
+}
+
+/*
+  HEADLINES
+*/
+h1 {
+  color: #fff;
+}
+
+.h1 {
+  color: var(--accentColor);
+  display: inline;
+  padding: 0 12px;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3),
+    -1px -1px 10px rgba(0, 0, 0, 0.3);
+  padding: 6px 12px;
+}
+
+.h2{
+  color: #fff;
+  font-family: 'Courier New', Courier, monospace;
+  text-shadow: 1px 1px 0 #000;
+  font-weight: 100;
+}
+
+
+h4{
+  line-height: 1.5rem;
+}
+
+
+
+/*
+  Panels
+*/
+
+.light{
+  color: white;
+  font-size: 1.25rem;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+}
+
+p{
+  line-height: 180%;
+}
+.code{
+background-color: yellow;
+color: #000;
+padding: 4px;
+border-radius: 3px;
+}

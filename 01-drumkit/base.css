@@ -1,0 +1,68 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.825rem;
+  margin: 0;
+  padding: 0;
+  margin-top: 46px;
+  background: url(https://images.unsplash.com/photo-1571327073757-71d13c24de30?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80);
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),url(https://images.unsplash.com/photo-1602939444907-6e688c594a66?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+header {
+  background: #333;
+  color: #d6d6d6;
+  display: flex;
+  position: fixed;
+  align-content: stretch;
+
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.logo {
+  height: 46px;
+  width: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.1);
+}
+
+.info {
+  height: 46px;
+  width: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.1);
+  background: url(https://img.icons8.com/ios/50/d6d6d6/sms.png) 50% 50%
+    no-repeat;
+  background-size: 50%;
+}
+
+.headline {
+  height: 46px;
+  align-items: center;
+  display: flex;
+
+  justify-content: center;
+  flex-grow: 1; /* default 0 */
+}
+
+h1 {
+  text-align: center;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently */
+}

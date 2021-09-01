@@ -1,0 +1,261 @@
+.wrap{
+  width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 46px);
+}
+
+.clock {
+  width: 20rem;
+  height: 20rem;
+  border: 10px solid rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  margin: 0 auto;
+  position: relative;
+  padding: 2rem;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1), inset 0 0 0 3px #efefef,
+    inset 0 0 10px black, 0 0 10px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+
+
+
+
+.clock-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  transform: translateY(-3px); /* account for the height of the clock hands */
+}
+
+.hand {
+  width: 50%;
+  height: 6px;
+  border-radius: 3px;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  transform-origin: 100%; /* das ist dafür das die Rotation nicht in der mitte des Elements sondern am äusseren Rand stattfindet*/
+  transform: rotate(
+    90deg
+  ); /* Das ist dafür das die Zeiger auf (12 Uhr) starten*/
+  transition: all 0.75s;
+  color: #fff;
+
+  /* transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1); Das definiert die art der Transformation */
+}
+
+.sec-hand {
+  width: 50%;
+  margin-left: 0%;
+  height: 2px;
+  border-radius: 1px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+  background: rgba(255, 255, 255, 0.25);
+  z-index: 100;
+}
+.sec-hand::before {
+  content: "";
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+  background: rgba(255, 255, 255, 0.25);
+  right: -100%;
+  height: 2px;
+  width: 12%;
+  display: block;
+  position: relative;
+}
+
+.min-hand {
+  width: 40%;
+  margin-left: 10%;
+  height: 4px;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+  z-index: 101;
+}
+.min-hand::before {
+  content: "";
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+  background: #fff;
+  right: -100%;
+  border-radius: 2px;
+  height: 4px;
+  width: 20%;
+  display: block;
+  position: relative;
+}
+
+.hour-hand {
+  width: 30%;
+  margin-left: 20%;
+  height: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+  z-index: 102;
+}
+
+.hour-hand::before {
+  content: "";
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+  background: #fff;
+  border-radius: 5px;
+  right: -100%;
+  height: 10px;
+  width: 20%;
+  display: block;
+  position: relative;
+}
+
+.clock-middle {
+  position: absolute;
+  left: calc(50% - 0.7rem);
+  top: calc(50% - 0.7rem);
+  width: 1rem;
+  height: 1rem;
+  background-color: black;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #000;
+}
+
+.hourmark {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1rem;
+  height: 3rem;
+  width: .5rem;
+  top: 0;
+
+  background: rgba(255, 255, 255, 0.15);
+}
+.hourmark:nth-child(1) {
+  left: calc(50% - .25rem);
+  top: calc(0%);
+}
+
+.hourmark:nth-child(2) {
+  left: calc(100% - 1.75rem);
+  top: calc(50% - 1.5rem);
+  transform: rotate(90deg);
+}
+
+.hourmark:nth-child(3) {
+  left: calc(50% - .25rem);
+  top: calc(100% - 3rem);
+}
+
+.hourmark:nth-child(4) {
+  left: calc(1.5rem);
+  top: calc(50% - 1.5rem);
+  transform: rotate(90deg);
+}
+
+
+.digital{
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  bottom: 3rem;
+  left: 0;
+  z-index: 80;
+}
+
+.dhour,.dmin,.dsec{
+width: 30px; height: 30px;
+display: flex;
+align-items: center;
+justify-content: center;
+text-justify: center;
+font-size: 1rem;
+color: rgba(255, 255, 255, 0.25);
+} 
+
+.dhour::after, .dmin::after{
+  content: ':';
+  position: relative;
+  left: 5px;
+}
+
+@media (max-width: 30rem) {
+  .clock {
+    width: calc(90vw - 20px - 10%);
+    height: calc(90vw - 20px - 10%);
+
+  }
+  .digital{
+    transform: scale(.7);
+  }
+
+  .wrap{
+    width: 90%;
+    margin: 0 5%;
+  }
+
+
+  .hourmark {
+    height: 1.5rem;
+    width: .25rem;
+    top: 0;
+  
+    background: rgba(255, 255, 255, 0.15);
+  }
+  .hourmark:nth-child(1) {
+    left: calc(50% - .125rem);
+    top: calc(0%);
+  }
+  
+  .hourmark:nth-child(2) {
+    left: calc(100% - .875rem);
+    top: calc(50% - .75rem);
+    transform: rotate(90deg);
+  }
+  
+  .hourmark:nth-child(3) {
+    left: calc(50% - .25rem);
+    top: calc(100% - 1.5rem);
+  }
+  
+  .hourmark:nth-child(4) {
+    left: .75rem;
+    top: calc(50% - .75rem);
+    transform: rotate(90deg);
+  }
+  
+  
+  .digital{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    bottom: 1.6rem;
+    left: 0;
+    z-index: 80;
+  }
+  
+  .dhour,.dmin,.dsec{
+  width: 25px; height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-justify: center;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.25);
+  } 
+  
+  .dhour::after, .dmin::after{
+    content: ':';
+    position: relative;
+    left: 2px;
+  }
+
+
+}
