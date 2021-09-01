@@ -3,34 +3,42 @@
  * Javascript DEV TOOLS
  */
 
-// ## Konami Code
+// ## Slide on Scroll
 
-const pressed = [];
-const secretCode = randomString(8);
+//#1  all elements with the class slide-in
+const sliderImages = document.querySelectorAll('.slide-in');
 
-document.querySelector('.code').innerHTML = secretCode;
-
-window.addEventListener('keyup', e => {
-
-  pressed.push(e.key);
-
-  if (pressed.length > secretCode.length) {
-    pressed.shift();
-  }
-
-  if (pressed.join('').includes(secretCode)) {
-    cornify_add();
-  }
-
-});
-
-
-function randomString(number = 5) {
-  // Erstelle ein Array mit 26 Buchstaben
-  const aplha = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-  let output = '';
-  for (var i = 0; i < number; i++) {
-    output += aplha[Math.floor(Math.random() * aplha.length)];
+// This Funtion is for optimizing Events - it will run all 20ms controll by the parm wait 
+function debounce(func, wait = 20, immediate = true) {
+  let timeout;
+  return function() {
+    let context = this, args = arguments;
+    let later = function() {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    let callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
   };
-  return output.toLowerCase();
+};
+
+
+function checkSlide() {
+  sliderImages.forEach(sliderImage => {
+    // half way through the image
+    const slideInAt = (window.scrollY + window.innerHeight) - sliderImage.height / 2;
+    // bottom of the image
+    const imageBottom = sliderImage.offsetTop + sliderImage.height;
+    const isHalfShown = slideInAt > sliderImage.offsetTop;
+    const isNotScrolledPast = window.scrollY < imageBottom;
+    if (isHalfShown && isNotScrolledPast) {
+      sliderImage.classList.add('active');
+    } else {
+      sliderImage.classList.remove('active');
+    }
+  });
 }
+
+window.addEventListener('scroll', debounce(checkSlide));
